@@ -1,0 +1,24 @@
+[project]
+name = "ollama-discord-bot-example"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Your Name",email = "you@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12,<4.0"
+dependencies = [
+    "discord-py (>=2.5.2,<3.0.0)",
+    "ollama (>=0.4.7,<0.5.0)"
+]
+
+[project.scripts]
+bot = "ollama_discord_bot_example.bot:start"
+
+[tool.poetry]
+packages = [{include = "ollama_discord_bot_example", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

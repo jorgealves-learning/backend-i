@@ -1,0 +1,18 @@
+volumes:
+  ollama:
+services:
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - 11434:11434
+    volumes:
+      - ollama:/root/.ollama:rw
+
+
+  bot:
+    build: 
+      dockerfile: dockerfile
+      context: .
+    command: poetry run bot
+    volumes:
+      - .:/workspace
