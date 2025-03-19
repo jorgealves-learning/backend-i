@@ -1,0 +1,25 @@
+services:
+  api:
+    build: .
+    command: session_12.main:api --host 0.0.0.0 --reload
+    ports:
+      - 8000:8000
+    environment:
+      DB_USER: todo_user
+      DB_PASS: qwerty
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: todo_db
+  db:
+    image: postgres:17-alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: qwerty
+      POSTGRES_DB: todo_db
+      POSTGRES_USER: todo_user
+  
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
