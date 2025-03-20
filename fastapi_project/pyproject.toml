@@ -1,5 +1,5 @@
 [project]
-name = "session-12"
+name = "fastapi_project"
 version = "0.1.0"
 description = ""
 authors = [
@@ -16,7 +16,7 @@ dependencies = [
 ]
 
 [tool.poetry]
-packages = [{include = "session_12", from = "src"}]
+packages = [{include = "fastapi_project", from = "src"}]
 
 
 [tool.poetry.group.dev.dependencies]

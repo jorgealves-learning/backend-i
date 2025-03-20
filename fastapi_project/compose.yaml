@@ -1,9 +1,13 @@
 services:
   api:
-    build: .
-    command: session_12.main:api --host 0.0.0.0 --reload
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: fastapi_project.main:api --host 0.0.0.0 --reload
     ports:
       - 8000:8000
+    # volumes:
+    #   - .:/app
     environment:
       DB_USER: todo_user
       DB_PASS: qwerty
