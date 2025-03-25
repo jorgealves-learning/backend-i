@@ -1,0 +1,22 @@
+{% block menu %}
+{% if request.user.is_authenticated %}
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>
+{% endif %}
+{% endblock %}
+{% block content %}
+<h2>Tasks</h2>
+<form action="{% url 'task_list' %}" method="post">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit">Create</button>
+</form>
+<hr>
+<ul>
+    {% for Task in object_list %}
+    <li>{{ Task.title }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

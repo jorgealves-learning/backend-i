@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{%block title%}
+Task App Django
+{%endblock%}
+
+{%block menu%}
+<h1>TASK APP</h1>
+{%endblock%}
+
+{%block content%}
+    <div>
+        <a href="{% url 'signup' %}">Sign up</a>
+        <a href="{% url 'signin' %}">Sign in</a>
+    </div>
+{%endblock%}
