@@ -1,24 +1,13 @@
-start:
-	poetry run python manage.py runserver
+# MAC and WINDOWS Users USE DEV CONTAINER
 
-migrate:
-	poetry run python manage.py migrate
+# LINUX Users DO NOT USE DEV CONTAINER
+#             ------------------------
 
 migrations:
-	poetry run python manage.py makemigrations $(app)
+	poetry run python manage.py makemigrations
 
-createsuperuser:
+create-superuser:
 	poetry run python manage.py createsuperuser
-
-new-app:
-	poetry run python manage.py startapp $(app)
-	@# to execute run `make new-app app=cenas`
-
-py3clean:
-	py3clean .
-
-tests:
-	poetry run pytest -vvv
 
 compose.start:
 	docker compose up --build --force-recreate
