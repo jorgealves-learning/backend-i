@@ -4,6 +4,7 @@ services:
       dockerfile: Dockerfile 
       context: .
     command: poetry run uvicorn djproject.asgi:application --host 0.0.0.0 --port 8000 --reload
+  
     ports:
       - 8000:8000
     env_file:

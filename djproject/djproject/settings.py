@@ -29,9 +29,9 @@ SECRET_KEY = "django-insecure-01bl2t5yv03(+hbg-qg999=0d=-_isx0t8_%njb$ku6cfe*7#7
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DJANGO_DEBUG",True)
+DEBUG = os.getenv("DJANGO_DEBUG",False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware", # for serving static files in production (DEBUG False)
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
